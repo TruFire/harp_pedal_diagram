@@ -28,7 +28,7 @@ MuseScore {
   pluginType: "dialog"
   id: pedalDialog
   width: 370
-  height: 260
+  height: 280
 
   onRun: {
     console.log("Drawing Harp Pedal Diagram popup dialog");
@@ -113,7 +113,7 @@ MuseScore {
     anchors.left: pedalDialog.left
     anchors.leftMargin: 10
     anchors.top: parent.top
-    anchors.topMargin: -5
+    anchors.topMargin: 5
     spacing: 10
     width: 20
 
@@ -130,7 +130,7 @@ MuseScore {
       id: radioVals
       anchors.left: pedalPositions.right
       RowLayout {
-        spacing: 41
+        spacing: 37.5
         Text  { text:  "D"; font.bold: true }
         Text  { text:  "C"; font.bold: true }
         Text  { text:  "B"; font.bold: true }
@@ -141,7 +141,7 @@ MuseScore {
       }
       RowLayout {
         id: flatRow
-        spacing: 20
+        spacing: 28
         property list<RadioButton> buttonList: [
           RadioButton { parent: flatRow; exclusiveGroup: colA },
           RadioButton { parent: flatRow; exclusiveGroup: colG },
@@ -154,7 +154,7 @@ MuseScore {
       }
       RowLayout {
         id: natRow
-        spacing: 20
+        spacing: 28
         property list<RadioButton> buttonList: [
           RadioButton { parent: natRow; exclusiveGroup: colA; checked: true },
           RadioButton { parent: natRow; exclusiveGroup: colG; checked: true },
@@ -167,7 +167,7 @@ MuseScore {
       }
       RowLayout {
         id: sharpRow
-        spacing: 20
+        spacing: 28
         property list<RadioButton> buttonList: [
           RadioButton { parent: sharpRow; exclusiveGroup: colA },
           RadioButton { parent: sharpRow; exclusiveGroup: colG },
@@ -200,7 +200,7 @@ MuseScore {
     border.width: 2
     border.color: "black"
     width: 330
-    height: 90
+    height: 115
 
     Text {
       property var symText;
@@ -210,7 +210,8 @@ MuseScore {
       // initial text is all naturals
       // corresponds to initial checked buttons
       text: "\uE681\uE681\uE681\uE683\uE681\uE681\uE681\uE681";
-      font.pointSize: 80
+      font.pointSize: 90
+      font.letterSpacing: -2
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
     }
